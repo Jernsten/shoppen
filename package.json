@@ -1,6 +1,6 @@
 {
   "name": "wshop19feb",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple webshop",
   "main": "index.js",
   "scripts": {
