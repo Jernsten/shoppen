@@ -44,6 +44,10 @@ app.get(ROUTE.product, (req, res) => {
     res.status(200).render(VIEW.product, {})
 })
 
+app.get(ROUTE.addProduct, (req, res) => {
+    res.status(200).render(VIEW.addProduct, {})
+})
+
 app.post(ROUTE.addProduct, (req, res) => {
     // Skapa ny produkt
     new productItem({
