@@ -44,14 +44,14 @@ app.get(ROUTE.product, (req, res) => {
 })
 
 app.post(ROUTE.addProduct, (req, res) => {
-    // spara ny produkt
+    // Skapa ny produkt
     new productItem({
         name: req.body.name,
         price: req.body.price,
         description: req.body.description,
         imgUrl: req.body.imgUrl
     }).save() // och spara till databasen
-
+    //skicka vidare till rout 
     res.status(200).redirect(ROUTE.gallery)
 })
 
