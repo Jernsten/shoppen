@@ -15,8 +15,8 @@ describe('Router tests', () => { // Huvudrubrik till våra test
         })
     })
 
-    it('Should respond to /gallery', () => {       // Ett test för att se om servern svarar på get /
-        supertest(server).get('/gallery').expect(200);   // vi testar om vi får svar på /
+    it('Should respond to /gallery', () => {
+        supertest(server).get('/gallery').expect(200)
     })
 
     it('Should respond to /product', () => {
@@ -24,14 +24,14 @@ describe('Router tests', () => { // Huvudrubrik till våra test
     })
 
     it('Should respond to post /add-product', () => {
-        supertest(server).post('/add-product').expect(302)
+        supertest(server).post('/add-product').expect(302) // 302 betyder "found, moved temporarily"
     })
 
     it('Should respond to /', () => {
         supertest(server).get('/').expect(200)
     })
 
-    afterEach(() => {                       // afterEach körs efter varje 'it' test
+    afterEach(() => {
         server.close()
         mongoose.disconnect()
         console.log('                  Server down! <<<<<<<<<<<<<<<<<')
