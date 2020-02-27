@@ -16,7 +16,8 @@ const ROUTE = {
 const VIEW = {
     gallery: 'gallery',
     product: 'product',
-    main: 'main'
+    main: 'main',
+    addProduct: 'add-product'
 }
 
 if (process.env.NODE_ENV == 'development') {
@@ -51,6 +52,7 @@ app.post(ROUTE.addProduct, (req, res) => {
         description: req.body.description,
         imgUrl: req.body.imgUrl
     }).save() // och spara till databasen
+
     //skicka vidare till rout 
     res.status(200).redirect(ROUTE.gallery)
 })
@@ -59,4 +61,4 @@ app.get(ROUTE.main, (req, res) => {
     res.status(200).render(VIEW.main, {})
 })
 
-module.exports = { app, port, express }
+module.exports = { app, port, express, ROUTE, VIEW }
