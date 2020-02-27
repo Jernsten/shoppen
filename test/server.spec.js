@@ -9,6 +9,7 @@ describe('Router tests', () => { // Huvudrubrik till våra test
     let server
 
     before((done) => {
+        // Starta servern
         mongoose.connect(dbUrl, dbOptions).then(() => {
             server = app.listen(port, () =>
                 console.log('                              >>>>>>>>>>>> Testing server up'))
@@ -16,11 +17,11 @@ describe('Router tests', () => { // Huvudrubrik till våra test
         })
     })
 
-    it('Should respond to /gallery', (done) => {
+    it('Should respond to get /gallery', (done) => {
         supertest(server).get(ROUTE.gallery).expect(200, done)
     })
 
-    it('Should respond to /product', (done) => {
+    it('Should respond to get /product', (done) => {
         supertest(server).get(ROUTE.product).expect(200, done)
     })
 
